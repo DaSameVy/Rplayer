@@ -1,7 +1,7 @@
 {
-  "name": "mpv_rev",
+  "name": "rplayer",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tauri-apps/api": "^2.4.0",
+    "@tauri-apps/plugin-dialog": "^2.2.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {
