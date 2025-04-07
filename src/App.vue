@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Dialog from './components/Dialog.vue'
+import PlayVideo from './components/PlayVideo.vue';
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import Dialog from './components/Dialog.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <Dialog />
+  <PlayVideo />
 </template>
 
 <style scoped>

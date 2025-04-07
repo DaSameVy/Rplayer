@@ -1,5 +1,5 @@
 use gstreamer::{ClockTime, Registry};
-use gstreamer_play::{Play, PlayMessage, PlayVideoRenderer};
+use gstreamer_play::{Play, PlayMessage, PlayVideoOverlayVideoRenderer};
 
 pub fn init_gstreamer() -> Result<(), Box<dyn std::error::Error>> {
     gstreamer::init()?;
@@ -30,10 +30,11 @@ pub fn init_gstreamer() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-pub fn play_video(path: &str) -> Result<(), Box<dyn std::error::Error>> {
-    let play = Play::new(None::<PlayVideoRenderer>);
+pub fn play_video_overlay(handle: usize, uri: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let renderer = unsafe { PlayVideoOverlayVideoRenderer::new(handle) };
+    let play = Play::new(Some(renderer));
 
-    play.set_uri(Some(path));
+    play.set_uri(Some(uri));
     play.play();
 
     std::thread::spawn(move || {

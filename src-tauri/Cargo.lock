@@ -9,6 +9,7 @@ dependencies = [
  "gstreamer",
  "gstreamer-play",
  "log",
+ "raw-window-handle",
  "serde",
  "serde_json",
  "tauri",

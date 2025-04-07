@@ -2,21 +2,21 @@
 import { open } from '@tauri-apps/plugin-dialog';
 import { invoke } from '@tauri-apps/api/core';
 
-async function openfile() {
-  const file = await open({
+async function play_video() {
+  const uri = await open({
     multiple: false,
     directory: false,
   });
-  console.log(file);
-  if (file) {
-    await invoke('play', { filePath: file });
+  console.log(uri);
+  if (uri) {
+    await invoke('play_video', { uri: uri });
   }
 }
 </script>
 
 <template>
   <div class="card">
-    <button type="button" @click="openfile">Open a file</button>
+    <button type="button" @click="play_video">Open a file</button>
   </div>
 </template>
 
