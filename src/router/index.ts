@@ -12,6 +12,11 @@ const routes = [
     path: '/video-player',
     name: 'VideoPlayer',
     component: VideoPlayerView
+  },
+  {
+    path: '/player',
+    name: 'Player',
+    component: VideoPlayerView
   }
 ];
 
